@@ -1,0 +1,61 @@
+[
+  {
+    "id": "1",
+    "name": "Muthoot Institute of Technology and Science",
+    "url": "http://www.google.com/",
+    "logoUrl": "http://www.google.com/",
+    "address": "Varikoli, Thirpunithura-Muvattupuzha Highway, Ernakulam, Kerala 683516",
+    "campus": {
+      "name": "Muthoot Institute of Technology and Science",
+      "cooridinates": "10.0489° N, 76.4036° E"
+    },
+    "overview": "Muthoot Institute of Technology and Science (MITS) is promoted by Muthoot M. George Institute of Technology, which is a Section 25 company under the Companies Act, 1956. The Institute is approved by the All India Council for Technical Education (AICTE) and affiliated to Mahatma Gandhi University, Kottayam, Kerala. The Institute is located in the industrial belt of Kochi, the commercial capital of Kerala and the seat of Cochin University of Science and Technology (CUSAT). The Institute is well connected by road, rail and air. The nearest railway station is Aluva, which is about 15 km from the Institute. The nearest airport is Cochin International Airport, which is about 25 km from the Institute. The Institute is located in a sprawling campus of 16 acres at Varikoli, 6 km from Thiruvankulam junction on the Thiruvankulam-Muvattupuzha road. The campus is about 20 km from Ernakulam and 6 km from Muvattupuzha.",
+    "eligibility": "Pass in Higher Secondary Examination, Kerala or 12th Standard V.H.S.E., C.B.S.E., I.S.C. or equivalent examination with Physics, Chemistry and Mathematics as optional subjects or any other examination accepted as equivalent thereto, securing at least 50% marks in Mathematics and 50% marks in Mathematics, Physics and Chemistry put together.",
+    "finances": " Rs. 1,00,000/- per annum",
+    "department And Faculty": "Computer Science and Engineering, Electronics and Communication Engineering, Electrical and Electronics Engineering, Mechanical Engineering, Civil Engineering, Humanities and Science",
+    "courses": [
+      {
+        "coursename": "B.Tech in Computer Science and Engineering",
+        "degree": "B.Tech",
+        "duration": "4 years",
+        "startDate": "August 2018",
+        "type": "Full Time",
+        "fee": "Rs. 1,00,000/- per annum",
+        "details": {
+          "about": {
+            "overview": "Muthoot Institute of Technology and Science (MITS) is promoted by Muthoot M. George Institute of Technology, which is a Section 25 company under the Companies Act, 1956. The Institute is approved by the All India Council for Technical Education (AICTE) and affiliated to Mahatma Gandhi University, Kottayam, Kerala. The Institute is located in the industrial belt of Kochi, the commercial capital of Kerala and the seat of Cochin University of Science and Technology (CUSAT). The Institute is well connected by road, rail and air. The nearest railway station is Aluva, which is about 15 km from the Institute. The nearest airport is Cochin International Airport, which is about 25 km from the Institute. The Institute is located in a sprawling campus of 16 acres at Varikoli, 6 km from Thiruvankulam junction on the Thiruvankulam-Muvattupuzha road. The campus is about 20 km from Ernakulam and 6 km from Muvattupuzha.",
+            "department": "Computer Science and Engineering",
+            "cricos": "123456"
+          },
+          "study": " The B.Tech. programme in Computer Science and Engineering is a four year programme spread over eight semesters. The programme is designed to enable a student to pursue a career in Information Technology or to pursue higher studies. The programme is designed to enable a student to pursue a career in Information Technology or to pursue higher studies. The programme is designed to enable a student to pursue a career in Information Technology or to pursue higher studies. The programme is designed to enable a student to pursue a career in Information Technology or to pursue higher studies. The programme is designed to enable a student to pursue a career in Information Technology or to pursue higher studies. The programme is designed to enable a student to pursue a career in Information Technology or to pursue higher studies.",
+          "entry": " Pass in Higher Secondary Examination, Kerala or 12th Standard V.H.S.E., C.B.S.E., I.S.C. or equivalent examination with Physics, Chemistry and Mathematics as optional subjects or any other examination accepted as equivalent thereto, securing at least 50% marks in Mathematics and 50% marks in Mathematics, Physics and Chemistry put together."
+        }
+      }
+    ],
+    "scholarships": [
+      {
+        "name": "Muthoot Institute of Technology and Science Scholarship",
+        "collegeName": "Muthoot Institute of Technology and Science",
+        "collegeUrl": "http://www.google.com/",
+        "studyLevel": "Undergraduate",
+        "deadline": "31/12/2018",
+        "funding": "Full Funding",
+        "value": "Rs. 1,00,000/- per annum",
+        "details": {
+          "about": {
+            "heading": "Muthoot Institute of Technology and Science Scholarship",
+            "html": "Muthoot Institute of Technology and Science (MITS) is promoted by Muthoot M. George Institute of Technology, which is a Section 25 company under the Companies Act, 1956. The Institute is approved by the All India Council for Technical Education (AICTE) and affiliated to Mahatma Gandhi University, Kottayam, Kerala. The Institute is located in the industrial belt of Kochi, the commercial capital of Kerala and the seat of Cochin University of Science and Technology (CUSAT). The Institute is well connected by road, rail and air. The nearest railway station is Aluva, which is about 15 km from the Institute. The nearest airport is Cochin International Airport, which is about 25 km from the Institute. The Institute is located in a sprawling campus of 16 acres at Varikoli, 6 km from Thiruvankulam junction on the Thiruvankulam-Muvattupuzha road. The campus is about 20 km from Ernakulam and 6 km from Muvattupuzha."
+          },
+          "entry": {
+            "heading": "Muthoot Institute of Technology and Science Scholarship",
+            "html": "Pass in Higher Secondary Examination, Kerala or 12th Standard V.H.S.E., C.B.S.E., I.S.C. or equivalent examination with Physics, Chemistry and Mathematics as optional subjects or any other examination accepted as equivalent thereto, securing at least 50% marks in Mathematics and 50% marks in Mathematics, Physics and Chemistry put together."
+          },
+          "apply": {
+            "heading": "Muthoot Institute of Technology and Science Scholarship",
+            "html": "Pass in Higher Secondary Examination, Kerala or 12th Standard V.H.S.E., C.B.S.E., I.S.C. or equivalent examination with Physics, Chemistry and Mathematics as optional subjects or any other examination accepted as equivalent thereto, securing at least 50% marks in Mathematics and 50% marks in Mathematics, Physics and Chemistry put together."
+          }
+        }
+      }
+    ]
+  }
+]
