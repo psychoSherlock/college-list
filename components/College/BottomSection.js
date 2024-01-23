@@ -1,5 +1,6 @@
 import React from "react";
 import Course from "../Courses/Course";
+import Scholarship from "../Scholarships/Scholarship";
 
 const BottomSection = () => {
   return (
@@ -35,6 +36,23 @@ const BottomSection = () => {
       <div className="flex flex-wrap gap-10 mt-6">
         <Course />
         <Course />
+        <div className="w-full flex gap-5 justify-center text-white items-end">
+          <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
+            1
+          </div>
+          <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
+            2
+          </div>
+          <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
+            3
+          </div>
+        </div>
+      </div>
+      <h1 className="text-4xl font-bold uppercase border-b-4 border-black pb-2 mt-6 mb-2 w-1/2">
+        Scholarships
+      </h1>
+      <div className="flex flex-wrap gap-10 mt-6">
+        <Scholarship />
         <div className="w-full flex gap-5 justify-center text-white items-end">
           <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
             1
