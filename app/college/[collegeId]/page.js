@@ -3,7 +3,7 @@ import BottomSection from "@/components/College/BottomSection";
 import TopSection from "@/components/College/TopSection";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-
+// import { useRouter } from "next/router";
 export default function SomeClientComponent() {
   const { collegeId } = useParams();
   const [collegeData, setCollegeData] = useState(null);
