@@ -32,7 +32,7 @@ export default function SomeClientComponent() {
           }
           if (
             current.courseName !== "" &&
-            current.courseName !== courseDetail.courseName
+            !new RegExp(current.courseName, "i").test(courseDetail.courseName)
           ) {
             return false;
           }
