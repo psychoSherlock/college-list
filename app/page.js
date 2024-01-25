@@ -17,7 +17,6 @@ export default function Home() {
         setCollegesOverview(data);
         setLoading(false);
         setFilterOptions(uniqueFilterOptions[0]);
-        console.log(data);
       } catch (error) {
         console.error(error);
         return null;

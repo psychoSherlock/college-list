@@ -17,22 +17,8 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
       const data = await res.json();
       setFilteredData(data);
       changeLoading(false);
-      console.log(data);
     });
   }
-  useEffect(() => {
-    if (filterOptions) {
-      dispatch({
-        type: "CHANGE_FILTER",
-        payload: {
-          ...current,
-          program: filterOptions.uniquePrograms[0],
-          type: filterOptions.uniqueCourseTypes[0],
-          country: filterOptions.uniqueCountries[0],
-        },
-      });
-    }
-  }, [filterOptions]);
   function toTitleCase(str) {
     return str.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -56,6 +42,7 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
               });
             }}
           >
+            <option value="">Choose</option>
             {filterOptions &&
               filterOptions.uniqueCountries.map((i, index) => (
                 <option value={i} key={index}>
@@ -79,6 +66,7 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
               });
             }}
           >
+            <option value="">Choose</option>
             {filterOptions &&
               filterOptions.uniquePrograms.map((i, index) => (
                 <option value={i} key={index}>
@@ -104,6 +92,7 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
               });
             }}
           >
+            <option value="">Choose</option>
             {filterOptions &&
               filterOptions.uniqueCourseTypes.map((i, index) => (
                 <option value={i} key={index}>
