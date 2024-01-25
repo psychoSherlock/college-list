@@ -1,10 +1,12 @@
 "use client";
 import BottomSection from "@/components/College/BottomSection";
 import TopSection from "@/components/College/TopSection";
+import { useFilterContext } from "@/hooks/useFilterContext";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-// import { useRouter } from "next/router";
+
 export default function SomeClientComponent() {
+  const { current, dispatch } = useFilterContext();
   const { collegeId } = useParams();
   const [collegeData, setCollegeData] = useState(null);
   useEffect(() => {
@@ -18,7 +20,25 @@ export default function SomeClientComponent() {
         }
         const data = await response.json();
         setCollegeData(data);
-        console.log(data);
+        data.courseDetails = data.courseDetails.filter((courseDetail) => {
+          if (
+            current.program !== "" &&
+            current.program !== courseDetail.program
+          ) {
+            return false;
+          }
+          if (current.type !== "" && current.type !== courseDetail.courseType) {
+            return false;
+          }
+          if (
+            current.courseName !== "" &&
+            current.courseName !== courseDetail.courseName
+          ) {
+            return false;
+          }
+
+          return true;
+        });
       } catch (error) {
         console.error(error);
         return null;

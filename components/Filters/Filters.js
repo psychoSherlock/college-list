@@ -1,14 +1,9 @@
 "use client";
+import { useFilterContext } from "@/hooks/useFilterContext";
 import { useEffect, useState } from "react";
 
 const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
-  const [filters, setFilters] = useState({
-    country: "",
-    program: "",
-    type: "",
-    courseName: "",
-    collegeName: "",
-  });
+  const { current, dispatch } = useFilterContext();
   function search() {
     changeLoading(true);
     const url = `${process.env.api}/colleges/filters`;
@@ -17,7 +12,7 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(filters),
+      body: JSON.stringify(current),
     }).then(async (res) => {
       const data = await res.json();
       setFilteredData(data);
@@ -27,11 +22,14 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
   }
   useEffect(() => {
     if (filterOptions) {
-      setFilters({
-        ...filters,
-        program: filterOptions.uniquePrograms[0],
-        type: filterOptions.uniqueCourseTypes[0],
-        country: filterOptions.uniqueCountries[0],
+      dispatch({
+        type: "CHANGE_FILTER",
+        payload: {
+          ...current,
+          program: filterOptions.uniquePrograms[0],
+          type: filterOptions.uniqueCourseTypes[0],
+          country: filterOptions.uniqueCountries[0],
+        },
       });
     }
   }, [filterOptions]);
@@ -52,7 +50,10 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
             name="countries"
             className="pl-4 py-2 ml-5 w-56 bg-[#003366] text-white rounded-sm"
             onChange={(e) => {
-              setFilters({ ...filters, country: e.target.value });
+              dispatch({
+                type: "CHANGE_FILTER",
+                payload: { ...current, country: e.target.value },
+              });
             }}
           >
             {filterOptions &&
@@ -72,7 +73,10 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
             name="level"
             className="pl-4 py-2 ml-5 min-w-56 bg-[#003366] text-white rounded-sm"
             onChange={(e) => {
-              setFilters({ ...filters, program: e.target.value });
+              dispatch({
+                type: "CHANGE_FILTER",
+                payload: { ...current, program: e.target.value },
+              });
             }}
           >
             {filterOptions &&
@@ -94,7 +98,10 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
             name="types"
             className="pl-4 py-2 ml-5 w-56 bg-[#003366] text-white rounded-sm"
             onChange={(e) => {
-              setFilters({ ...filters, type: e.target.value });
+              dispatch({
+                type: "CHANGE_FILTER",
+                payload: { ...current, type: e.target.value },
+              });
             }}
           >
             {filterOptions &&
@@ -112,7 +119,10 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
             placeholder="Enter the course name"
             className="p-4 text-black placeholder:text-black w-full border-2 border-[#003366] rounded-md outline-none"
             onChange={(e) => {
-              setFilters({ ...filters, courseName: e.target.value });
+              dispatch({
+                type: "CHANGE_FILTER",
+                payload: { ...current, courseName: e.target.value },
+              });
             }}
           />
         </div>
@@ -124,7 +134,10 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
           placeholder="Enter the college name"
           className="p-4 text-black placeholder:text-black w-1/2 border-2 border-[#003366] rounded-md outline-none"
           onChange={(e) => {
-            setFilters({ ...filters, collegeName: e.target.value });
+            dispatch({
+              type: "CHANGE_FILTER",
+              payload: { ...current, collegeName: e.target.value },
+            });
           }}
         />
         <button
