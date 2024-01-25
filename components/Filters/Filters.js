@@ -1,38 +1,45 @@
-const Filters = () => {
-  const countOpt = [
-    "Australia",
-    "Canada",
-    "China",
-    "Germany",
-    "India",
-    "Ireland",
-    "Malaysia",
-    "Nepal",
-    "New Zealand",
-    "Philippines",
-    "Russia",
-    "Singapore",
-    "South Africa",
-    "Sweden",
-    "Ukraine",
-    "United Kingdom",
-    "United States",
-  ];
-  const levelOpt = [
-    "Diploma",
-    "Bachelor",
-    "Master",
-    "Doctorate",
-    "Certificate",
-  ];
-  const courseOpt = [
-    "Nursing",
-    "Engineering",
-    "Business",
-    "Computer Science",
-    "Medicine",
-    "Psychology",
-  ];
+"use client";
+import { useEffect, useState } from "react";
+
+const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
+  const [filters, setFilters] = useState({
+    country: "",
+    program: "",
+    type: "",
+    courseName: "",
+    collegeName: "",
+  });
+  function search() {
+    changeLoading(true);
+    const url = `${process.env.api}/colleges/filters`;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(filters),
+    }).then(async (res) => {
+      const data = await res.json();
+      setFilteredData(data);
+      changeLoading(false);
+      console.log(data);
+    });
+  }
+  useEffect(() => {
+    if (filterOptions) {
+      setFilters({
+        ...filters,
+        program: filterOptions.uniquePrograms[0],
+        type: filterOptions.uniqueCourseTypes[0],
+        country: filterOptions.uniqueCountries[0],
+      });
+    }
+  }, [filterOptions]);
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function (txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
   return (
     <div className="w-2/3  bg-[whitesmoke] rounded-lg p-10 flex flex-col gap-5">
       <div className="flex justify-between gap-5">
@@ -44,12 +51,16 @@ const Filters = () => {
             id="countries"
             name="countries"
             className="pl-4 py-2 ml-5 w-56 bg-[#003366] text-white rounded-sm"
+            onChange={(e) => {
+              setFilters({ ...filters, country: e.target.value });
+            }}
           >
-            {countOpt.map((i, index) => (
-              <option value={i} key={index}>
-                {i}
-              </option>
-            ))}
+            {filterOptions &&
+              filterOptions.uniqueCountries.map((i, index) => (
+                <option value={i} key={index}>
+                  {toTitleCase(i)}
+                </option>
+              ))}
           </select>
         </div>
         <div className="flex items-center w-1/2 justify-between">
@@ -59,13 +70,17 @@ const Filters = () => {
           <select
             id="level"
             name="level"
-            className="pl-4 py-2 ml-5 w-56 bg-[#003366] text-white rounded-sm"
+            className="pl-4 py-2 ml-5 min-w-56 bg-[#003366] text-white rounded-sm"
+            onChange={(e) => {
+              setFilters({ ...filters, program: e.target.value });
+            }}
           >
-            {levelOpt.map((i, index) => (
-              <option value={i} key={index}>
-                {i}
-              </option>
-            ))}
+            {filterOptions &&
+              filterOptions.uniquePrograms.map((i, index) => (
+                <option value={i} key={index}>
+                  {i}
+                </option>
+              ))}
           </select>
         </div>
       </div>
@@ -78,12 +93,16 @@ const Filters = () => {
             id="types"
             name="types"
             className="pl-4 py-2 ml-5 w-56 bg-[#003366] text-white rounded-sm"
+            onChange={(e) => {
+              setFilters({ ...filters, type: e.target.value });
+            }}
           >
-            {courseOpt.map((i, index) => (
-              <option value={i} key={index}>
-                {i}
-              </option>
-            ))}
+            {filterOptions &&
+              filterOptions.uniqueCourseTypes.map((i, index) => (
+                <option value={i} key={index}>
+                  {i}
+                </option>
+              ))}
           </select>
         </div>
         <div className="flex items-center w-1/2 justify-between mono">
@@ -92,16 +111,28 @@ const Filters = () => {
             type="text"
             placeholder="Enter the course name"
             className="p-4 text-black placeholder:text-black w-full border-2 border-[#003366] rounded-md outline-none"
+            onChange={(e) => {
+              setFilters({ ...filters, courseName: e.target.value });
+            }}
           />
         </div>
       </div>
-      <div className="flex items-center w-full justify-between mono">
+      <div className="flex items-center w-full justify-between mono gap-5">
         <input
           name="collegeName"
           type="text"
           placeholder="Enter the college name"
-          className="p-4 text-black placeholder:text-black w-full border-2 border-[#003366] rounded-md outline-none"
+          className="p-4 text-black placeholder:text-black w-1/2 border-2 border-[#003366] rounded-md outline-none"
+          onChange={(e) => {
+            setFilters({ ...filters, collegeName: e.target.value });
+          }}
         />
+        <button
+          onClick={search}
+          className="bg-[whitesmoke] border-2 border-[#003366] w-1/2 p-4 rounded-md text-black hover:bg-[#003366] hover:text-[whitesmoke] transition-all ease-in-out duration-300"
+        >
+          Search
+        </button>
       </div>
     </div>
   );

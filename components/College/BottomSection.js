@@ -41,8 +41,9 @@ const BottomSection = ({ data }) => {
         Courses
       </h1>
       <div className="flex flex-wrap gap-10 mt-6">
-        <Course />
-        <Course />
+        {data.courses.map((value, index) => (
+          <Course courseData={value} key={index} />
+        ))}
         <div className="w-full flex gap-5 justify-center text-white items-end">
           <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
             1

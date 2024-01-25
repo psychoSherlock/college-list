@@ -11,9 +11,8 @@ export default function SomeClientComponent() {
     async function fetchData() {
       try {
         const response = await fetch(
-          `https://list.glitchy.systems/colleges/${collegeId}`
+          `${process.env.api}/colleges/${collegeId}`
         );
-        ``;
         if (!response.ok) {
           throw new Error("Failed to fetch data from the backend");
         }
@@ -50,6 +49,7 @@ export default function SomeClientComponent() {
               eligibility: collegeData.landing.eligibility.html,
               finance: collegeData.landing.finance.html,
               department: collegeData.landing.department.html,
+              courses: collegeData.courseDetails,
             }}
           />
         </div>
