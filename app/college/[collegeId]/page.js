@@ -36,7 +36,6 @@ export default function SomeClientComponent() {
           ) {
             return false;
           }
-
           return true;
         });
       } catch (error) {
