@@ -52,7 +52,7 @@ export default function SomeClientComponent() {
   return (
     <>
       {collegeData && (
-        <div className="text-black min-h-screen bg-[whitesmoke] pb-20">
+        <div className="text-black bg-[lightgray] min-h-screen pb-20">
           <TopSection
             data={{
               name: collegeData.name,
@@ -70,6 +70,7 @@ export default function SomeClientComponent() {
               finance: collegeData.landing.finance.html,
               department: collegeData.landing.department.html,
               courses: collegeData.courseDetails,
+              scholarships: collegeData.scholarshipDetails,
             }}
           />
         </div>

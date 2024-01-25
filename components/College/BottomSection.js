@@ -14,11 +14,11 @@ const BottomSection = ({ data }) => {
           __html: data.eligibility ? data.eligibility : "Unavailable",
         }}
       ></h1>
-      <h1 className="text-4xl font-bold uppercase  border-b-4 border-black pb-2 mt-6 mb-2 w-1/2">
-        Finances
-      </h1>
       <div className="relative">
         <div className="w-full h-full absolute z-10"></div>
+        <h1 className="text-4xl font-bold uppercase  border-b-4 border-black pb-2 mt-6 mb-2 w-1/2">
+          Finances
+        </h1>
         <h1
           className="font-bold text-xl uppercase"
           dangerouslySetInnerHTML={{
@@ -40,7 +40,7 @@ const BottomSection = ({ data }) => {
       <h1 className="text-4xl font-bold uppercase border-b-4 border-black pb-2 mt-6 mb-2 w-1/2">
         Courses
       </h1>
-      <div className="flex flex-wrap gap-10 mt-6">
+      <div className="flex flex-wrap gap-10 mt-6 justify-around">
         {data.courses.map((value, index) => (
           <Course courseData={value} key={index} />
         ))}
@@ -59,8 +59,10 @@ const BottomSection = ({ data }) => {
       <h1 className="text-4xl font-bold uppercase border-b-4 border-black pb-2 mt-6 mb-2 w-1/2">
         Scholarships
       </h1>
-      <div className="flex flex-wrap gap-10 mt-6">
-        <Scholarship />
+      <div className="flex flex-wrap gap-10 mt-6 justify-around">
+        {data.scholarships.map((value, index) => (
+          <Scholarship scholarshipData={value} key={index} />
+        ))}
         <div className="w-full flex gap-5 justify-center text-white items-end">
           <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
             1

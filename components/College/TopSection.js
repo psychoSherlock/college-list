@@ -24,7 +24,7 @@ const TopSection = ({ data }) => {
           </h6>
           <div className="my-5 w-full h-1 bg-[whitesmoke]"></div>
           <p
-            className="font-semibold text-lg"
+            className="font-medium text-xl"
             dangerouslySetInnerHTML={{
               __html: data.about ? data.about : data.overviewHtml,
             }}

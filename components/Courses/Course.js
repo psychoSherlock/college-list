@@ -1,7 +1,7 @@
 const Course = ({ courseData }) => {
   return (
     <div
-      className="bg-[#003366] text-[whitesmoke] w-[300px] uppercase p-5 rounded-lg"
+      className="bg-[#003366] text-[whitesmoke] w-[300px] uppercase p-5 rounded-lg hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
       onClick={() => (window.location.href = courseData.courseUrl)}
     >
       <div className="border-2 borde-white rounded-lg p-5 h-full flex flex-col gap-2 justify-evenly">
