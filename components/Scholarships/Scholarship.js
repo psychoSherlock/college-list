@@ -1,6 +1,13 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 const Scholarship = ({ scholarshipData }) => {
+  const router = useRouter();
   return (
-    <div className="bg-[#003366] text-[whitesmoke] w-[400px] h-[500px] p-5 rounded-lg hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer">
+    <div
+      // onClick={() => router.push(`/scholarship/${scholarshipData._id}`)}
+      className="bg-[#003366] text-[whitesmoke] w-[400px] h-[500px] p-5 rounded-lg hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
+    >
       <div className="flex flex-col gap-3 border border-[whitesmoke] p-5 rounded-lg h-full justify-between">
         <h2 className="font-bold text-2xl uppercase">
           {scholarshipData.scholarshipName}

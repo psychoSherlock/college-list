@@ -5,7 +5,7 @@ import { useFilterContext } from "@/hooks/useFilterContext";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function SomeClientComponent() {
+export default function CollegePage() {
   const { current, dispatch } = useFilterContext();
   const { collegeId } = useParams();
   const [collegeData, setCollegeData] = useState(null);

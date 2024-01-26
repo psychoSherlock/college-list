@@ -1,8 +1,14 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 const Course = ({ courseData }) => {
+  const router = useRouter();
   return (
     <div
       className="bg-[#003366] text-[whitesmoke] w-[400px] min-h-[400px] p-5 rounded-lg hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
-      // onClick={() => (window.location.href = courseData.courseUrl)}
+      // onClick={() => {
+      //   router.push(`/course/${courseData._id}`);
+      // }}
     >
       <div className="border-2 borde-white rounded-lg p-5 h-full flex flex-col gap-2 justify-between">
         <h1 className="font-black text-2xl uppercase">
