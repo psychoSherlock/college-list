@@ -2,7 +2,7 @@
 // https://list.glitchy.systems
 const nextConfig = {
   env: {
-    api: "https://list.glitchy.systems",
+    api: "https://collegelist-caba7xaw.b4a.run/",
   },
 };
 
