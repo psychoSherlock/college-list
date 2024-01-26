@@ -15,10 +15,7 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
       body: JSON.stringify(current),
     }).then(async (res) => {
       const data = await res.json();
-      const sortedData = data.sort(
-        (a, b) => -(a.numberOfCourses - b.numberOfCourses)
-      );
-      setFilteredData(sortedData);
+      setFilteredData(data);
       changeLoading(false);
     });
   }
