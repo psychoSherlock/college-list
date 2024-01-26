@@ -2,7 +2,7 @@
 // https://list.glitchy.systems
 const nextConfig = {
   env: {
-    api: "https://list.glitchy.systems",
+    api: "http://localhost:4000",
   },
 };
 
