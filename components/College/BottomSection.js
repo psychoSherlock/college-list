@@ -3,7 +3,7 @@ import Course from "../Courses/Course";
 import Scholarship from "../Scholarships/Scholarship";
 
 const BottomSection = ({ data }) => {
-  const [selectedPage, setSelectedPage] = useState(1);
+  const [selectedPage, setSelectedPage] = useState(4);
   function changeSelected(value) {
     setSelectedPage(value);
   }
@@ -11,12 +11,32 @@ const BottomSection = ({ data }) => {
     <div className="px-20  pt-10 mono">
       <div className="flex text-center">
         <h1
+          onClick={() => changeSelected(4)}
+          className={`${
+            selectedPage === 4
+              ? "bg-[#003366] border-[#003366] text-white"
+              : "border-black text-black"
+          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2 border-l-4  p-2 mb-2 w-1/5`}
+        >
+          Courses
+        </h1>
+        <h1
+          onClick={() => changeSelected(5)}
+          className={`${
+            selectedPage === 5
+              ? "bg-[#003366] border-[#003366] text-white"
+              : "border-black text-black"
+          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
+        >
+          Scholarships
+        </h1>
+        <h1
           onClick={() => changeSelected(1)}
           className={`${
             selectedPage === 1
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2 border-l-4  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
         >
           Eligibility
         </h1>
@@ -36,29 +56,9 @@ const BottomSection = ({ data }) => {
             selectedPage === 3
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  border-r-4  p-2 mb-2 w-1/5`}
         >
           Department And Faculty
-        </h1>
-        <h1
-          onClick={() => changeSelected(4)}
-          className={`${
-            selectedPage === 4
-              ? "bg-[#003366] border-[#003366] text-white"
-              : "border-black text-black"
-          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
-        >
-          Courses
-        </h1>
-        <h1
-          onClick={() => changeSelected(5)}
-          className={`${
-            selectedPage === 5
-              ? "bg-[#003366] border-[#003366] text-white"
-              : "border-black text-black"
-          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2 border-r-4  p-2 mb-2 w-1/5`}
-        >
-          Scholarships
         </h1>
       </div>
       {selectedPage === 1 && (
