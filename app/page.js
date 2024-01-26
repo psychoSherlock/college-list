@@ -1,11 +1,13 @@
 "use client";
 import CollegeCard from "@/components/College/CollegeCard";
 import Filters from "@/components/Filters/Filters";
+import { useFilterContext } from "@/hooks/useFilterContext";
 import { useEffect, useState } from "react";
 export default function Home() {
+  const { current, dispatch } = useFilterContext();
   const [collegesOverview, setCollegesOverview] = useState([]);
   const [filterOptions, setFilterOptions] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -13,9 +15,7 @@ export default function Home() {
         if (!response.ok) {
           throw new Error("Failed to fetch data from the backend");
         }
-        const { data, uniqueFilterOptions } = await response.json();
-        setCollegesOverview(data);
-        setLoading(false);
+        const { uniqueFilterOptions } = await response.json();
         setFilterOptions(uniqueFilterOptions[0]);
       } catch (error) {
         console.error(error);
@@ -32,7 +32,10 @@ export default function Home() {
   }
   return (
     <main className="min-h-screen bg-[#003366] flex flex-col items-center p-20">
-      <div className="w-full flex flex-col justify-between items-center gap-10">
+      <div
+        className="w-full flex flex-col justify-between items-center gap-10"
+        onClick={() => console.log(current)}
+      >
         <Filters
           setFilteredData={setFilteredData}
           filterOptions={filterOptions}

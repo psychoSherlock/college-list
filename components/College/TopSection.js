@@ -6,12 +6,12 @@ const TopSection = ({ data }) => {
           <h1 className="uppercase text-6xl font-bold w-1/2 mb-5">
             {data.name ? data.name : ""}
           </h1>
-          <a
+          {/* <a
             href={data.collegeUrl ? data.collegeUrl : ""}
             className="text-md w-max my-2 cursor-pointer hover:text-yellow-400 transition-all ease-in-out duration-300 ml-1"
           >
             Visit the website -&gt;
-          </a>
+          </a> */}
           <h6 className="text-md mt-2 ml-1">
             {data.address ? data.address : ""}
           </h6>

@@ -35,6 +35,7 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
             id="countries"
             name="countries"
             className="pl-4 py-2 ml-5 w-56 bg-[#003366] text-white rounded-sm"
+            value={current.country !== "" ? current.country : "Choose"}
             onChange={(e) => {
               dispatch({
                 type: "CHANGE_FILTER",
@@ -58,7 +59,8 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
           <select
             id="level"
             name="level"
-            className="pl-4 py-2 ml-5 min-w-56 bg-[#003366] text-white rounded-sm"
+            className="pl-4 py-2 ml-5 w-56 bg-[#003366] text-white rounded-sm"
+            value={current.program !== "" ? current.program : "Choose"}
             onChange={(e) => {
               dispatch({
                 type: "CHANGE_FILTER",
@@ -85,6 +87,7 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
             id="types"
             name="types"
             className="pl-4 py-2 ml-5 w-56 bg-[#003366] text-white rounded-sm"
+            value={current.type !== "" ? current.type : "Choose"}
             onChange={(e) => {
               dispatch({
                 type: "CHANGE_FILTER",
@@ -107,6 +110,7 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
             type="text"
             placeholder="Enter the course name"
             className="p-4 text-black placeholder:text-black w-full border-2 border-[#003366] rounded-md outline-none"
+            value={current.courseName !== "" ? current.courseName : ""}
             onChange={(e) => {
               dispatch({
                 type: "CHANGE_FILTER",
@@ -122,6 +126,7 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
           type="text"
           placeholder="Enter the college name"
           className="p-4 text-black placeholder:text-black w-1/2 border-2 border-[#003366] rounded-md outline-none"
+          value={current.collegeName !== "" ? current.collegeName : ""}
           onChange={(e) => {
             dispatch({
               type: "CHANGE_FILTER",
