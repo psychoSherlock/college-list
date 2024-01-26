@@ -20,8 +20,9 @@ const Course = ({ courseData }) => {
         <h2 className="text-xl font-bold ">
           Fees:{" "}
           {courseData.perYearFeeAUD
-            ? `${courseData.perYearFeeAUD} AUD
-          per year`
+            ? `AUD ${courseData.perYearFeeAUD} per year (Approx. INR ${
+                courseData.perYearFeeAUD * 54.72
+              })`
             : "Unavaiable"}
         </h2>
       </div>

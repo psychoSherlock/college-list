@@ -16,7 +16,7 @@ const BottomSection = ({ data }) => {
             selectedPage === 4
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2 border-l-4  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2 border-l-4  p-2 mb-2 w-1/5`}
         >
           Courses
         </h1>
@@ -26,7 +26,7 @@ const BottomSection = ({ data }) => {
             selectedPage === 5
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
         >
           Scholarships
         </h1>
@@ -36,7 +36,7 @@ const BottomSection = ({ data }) => {
             selectedPage === 1
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
         >
           Eligibility
         </h1>
@@ -46,7 +46,7 @@ const BottomSection = ({ data }) => {
             selectedPage === 2
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
         >
           Finances
         </h1>
@@ -56,7 +56,7 @@ const BottomSection = ({ data }) => {
             selectedPage === 3
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-4xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  border-r-4  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  border-r-4  p-2 mb-2 w-1/5`}
         >
           Department And Faculty
         </h1>
