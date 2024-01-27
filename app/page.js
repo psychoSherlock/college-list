@@ -34,7 +34,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#003366] flex flex-col items-center p-20">
       <div
         className="w-full flex flex-col justify-between items-center gap-10"
-        onClick={() => console.log(current)}
+        // onClick={() => console.log(current)}
       >
         <Filters
           setFilteredData={setFilteredData}

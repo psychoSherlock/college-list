@@ -17,7 +17,7 @@ export const filtersReducer = (state, action) => {
 export const FilterContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(filtersReducer, {
     current: {
-      country: "",
+      country: "australia",
       program: "",
       type: "",
       courseName: "",

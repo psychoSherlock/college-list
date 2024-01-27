@@ -1,6 +1,5 @@
 "use client";
 import { useFilterContext } from "@/hooks/useFilterContext";
-import { useEffect, useState } from "react";
 
 const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
   const { current, dispatch } = useFilterContext();
@@ -36,7 +35,7 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
             id="countries"
             name="countries"
             className="pl-4 py-2 ml-5 w-56 bg-[#003366] text-white rounded-sm"
-            value={current.country !== "" ? current.country : "Choose"}
+            value={current.country !== "" ? current.country : "australia"}
             onChange={(e) => {
               dispatch({
                 type: "CHANGE_FILTER",
@@ -44,7 +43,6 @@ const Filters = ({ setFilteredData, filterOptions, changeLoading }) => {
               });
             }}
           >
-            <option value="">Choose</option>
             {filterOptions &&
               filterOptions.uniqueCountries.map((i, index) => (
                 <option value={i} key={index}>
