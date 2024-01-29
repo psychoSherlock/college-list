@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function CollegePage() {
   const { current, dispatch } = useFilterContext();
+  const [loading, setLoading] = useState(true);
   const { collegeId } = useParams();
   const [collegeData, setCollegeData] = useState(null);
   useEffect(() => {
@@ -38,8 +39,10 @@ export default function CollegePage() {
           }
           return true;
         });
+        setLoading(false);
       } catch (error) {
         console.error(error);
+        setLoading(false);
         return null;
       }
     }
@@ -50,7 +53,11 @@ export default function CollegePage() {
 
   return (
     <>
-      {collegeData && (
+      {loading ? (
+        <div className="w-screen min-h-screen flex justify-center items-center mono text-4xl font-bold">
+          Loading...
+        </div>
+      ) : collegeData ? (
         <div className="text-black bg-[lightgray] min-h-screen pb-20">
           <TopSection
             data={{
@@ -73,6 +80,8 @@ export default function CollegePage() {
             }}
           />
         </div>
+      ) : (
+        <div>No Data Found</div>
       )}
     </>
   );

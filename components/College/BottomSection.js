@@ -8,15 +8,15 @@ const BottomSection = ({ data }) => {
     setSelectedPage(value);
   }
   return (
-    <div className="px-20  pt-10 mono">
-      <div className="flex text-center">
+    <div className="px-5 md:px-20  pt-10 mono">
+      <div className="flex flex-col md:flex-row text-center">
         <h1
           onClick={() => changeSelected(4)}
           className={`${
             selectedPage === 4
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2 border-l-4  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer lg:text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2 md:border-l-4  p-2 mb-2 w-full text-base  md:w-1/5`}
         >
           Courses
         </h1>
@@ -26,7 +26,7 @@ const BottomSection = ({ data }) => {
             selectedPage === 5
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer lg:text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-full text-base  md:w-1/5`}
         >
           Scholarships
         </h1>
@@ -36,7 +36,7 @@ const BottomSection = ({ data }) => {
             selectedPage === 1
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer lg:text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-full text-base  md:w-1/5`}
         >
           Eligibility
         </h1>
@@ -46,7 +46,7 @@ const BottomSection = ({ data }) => {
             selectedPage === 2
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer lg:text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  p-2 mb-2 w-full text-base  md:w-1/5`}
         >
           Finances
         </h1>
@@ -56,14 +56,14 @@ const BottomSection = ({ data }) => {
             selectedPage === 3
               ? "bg-[#003366] border-[#003366] text-white"
               : "border-black text-black"
-          } select-none cursor-pointer text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  border-r-4  p-2 mb-2 w-1/5`}
+          } select-none cursor-pointer lg:text-xl flex justify-center items-center font-bold uppercase border-y-4 border-x-2  md:border-r-4  p-2 mb-2 w-full text-base  md:w-1/5`}
         >
           Department And Faculty
         </h1>
       </div>
       {selectedPage === 1 && (
         <h1
-          className="font-bold text-xl"
+          className="font-bold text-base md:text-xl"
           dangerouslySetInnerHTML={{
             __html: data.eligibility ? data.eligibility : "Unavailable",
           }}
@@ -73,7 +73,7 @@ const BottomSection = ({ data }) => {
         <div className="relative">
           <div className="w-full h-full absolute z-10"></div>
           <h1
-            className="font-bold text-xl"
+            className="font-bold text-base md:text-xl"
             dangerouslySetInnerHTML={{
               __html: data.finance ? data.finance : "Unavailable",
             }}
@@ -82,7 +82,7 @@ const BottomSection = ({ data }) => {
       )}
       {selectedPage === 3 && (
         <h1
-          className="font-bold text-xl"
+          className="font-bold text-base md:text-xl"
           dangerouslySetInnerHTML={{
             __html: data.department ? data.department : "Unavailable",
           }}
@@ -93,17 +93,6 @@ const BottomSection = ({ data }) => {
           {data.courses.map((value, index) => (
             <Course courseData={value} key={index} />
           ))}
-          <div className="w-full flex gap-5 justify-center text-white items-end">
-            <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
-              1
-            </div>
-            <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
-              2
-            </div>
-            <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
-              3
-            </div>
-          </div>
         </div>
       )}
       {selectedPage === 5 && (
@@ -111,17 +100,6 @@ const BottomSection = ({ data }) => {
           {data.scholarships.map((value, index) => (
             <Scholarship scholarshipData={value} key={index} />
           ))}
-          <div className="w-full flex gap-5 justify-center text-white items-end">
-            <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
-              1
-            </div>
-            <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
-              2
-            </div>
-            <div className="bg-[#003366] p-4 cursor-pointer transition-all ease-in-out duration-300 hover:scale-105">
-              3
-            </div>
-          </div>
         </div>
       )}
     </div>
