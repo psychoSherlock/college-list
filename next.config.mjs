@@ -2,7 +2,7 @@
 // https://list.glitchy.systems
 const nextConfig = {
   env: {
-    api: "https://list.glitchy.systems",
+    api: "https://dev-ycmdj963.b4a.run",
   },
 };
 
