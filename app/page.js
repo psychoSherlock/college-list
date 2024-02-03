@@ -20,6 +20,7 @@ export default function Home() {
         }
         const { uniqueFilterOptions } = await response.json();
         setFilterOptions(uniqueFilterOptions[0]);
+        console.log(uniqueFilterOptions[0].uniqueCountries);
       } catch (error) {
         console.error(error);
         return null;

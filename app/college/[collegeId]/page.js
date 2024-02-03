@@ -20,6 +20,7 @@ export default function CollegePage() {
           throw new Error("Failed to fetch data from the backend");
         }
         const data = await response.json();
+        console.log(data);
         setCollegeData(data);
         data.courseDetails = data.courseDetails.filter((courseDetail) => {
           if (
