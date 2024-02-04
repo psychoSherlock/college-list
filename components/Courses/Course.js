@@ -1,7 +1,8 @@
 "use client";
+import { currencies } from "@/data/currencyMap";
 import { useRouter } from "next/navigation";
 
-const Course = ({ courseData }) => {
+const Course = ({ courseData, converionRate }) => {
   const router = useRouter();
   return (
     <div
@@ -25,10 +26,16 @@ const Course = ({ courseData }) => {
 
         <h2 className="text-xl font-bold ">
           Fees:{" "}
-          {courseData.perYearFeeAUD
-            ? `AUD ${courseData.perYearFeeAUD.toLocaleString()} per year (Approx. INR ${Math.floor(
-                courseData.perYearFeeAUD * 54.72
-              ).toLocaleString()})`
+          {typeof courseData.perYearFeeAUD === "number"
+            ? `${
+                currencies[courseData.country]
+              } ${courseData.perYearFeeAUD.toLocaleString()} per year (Approx. INR ${
+                typeof courseData.perYearFeeAUD === "number"
+                  ? Math.floor(
+                      courseData.perYearFeeAUD / Number(converionRate)
+                    ).toLocaleString()
+                  : "Unavailable"
+              })`
             : "Unavaiable"}
         </h2>
       </div>

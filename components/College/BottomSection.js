@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Course from "../Courses/Course";
 import Scholarship from "../Scholarships/Scholarship";
 
-const BottomSection = ({ data }) => {
+const BottomSection = ({ data, converionRate }) => {
   const [selectedPage, setSelectedPage] = useState(4);
   function changeSelected(value) {
     setSelectedPage(value);
@@ -91,7 +91,11 @@ const BottomSection = ({ data }) => {
       {selectedPage === 4 && (
         <div className="flex flex-wrap gap-10 mt-6 justify-around">
           {data.courses.map((value, index) => (
-            <Course courseData={value} key={index} />
+            <Course
+              converionRate={converionRate}
+              courseData={value}
+              key={index}
+            />
           ))}
         </div>
       )}

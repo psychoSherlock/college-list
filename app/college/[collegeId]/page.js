@@ -1,6 +1,7 @@
 "use client";
 import BottomSection from "@/components/College/BottomSection";
 import TopSection from "@/components/College/TopSection";
+import { getCurrencyCode } from "@/data/currencyMap";
 import { useFilterContext } from "@/hooks/useFilterContext";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -10,6 +11,7 @@ export default function CollegePage() {
   const [loading, setLoading] = useState(true);
   const { collegeId } = useParams();
   const [collegeData, setCollegeData] = useState(null);
+  const [converionRate, setConversionRate] = useState(0);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -19,10 +21,8 @@ export default function CollegePage() {
         if (!response.ok) {
           throw new Error("Failed to fetch data from the backend");
         }
-        const data = await response.json();
-        console.log(data);
-        setCollegeData(data);
-        data.courseDetails = data.courseDetails.filter((courseDetail) => {
+        const { college, currencyConversion } = await response.json();
+        college.courseDetails = college.courseDetails.filter((courseDetail) => {
           if (
             current.program !== "" &&
             current.program !== courseDetail.program
@@ -40,6 +40,8 @@ export default function CollegePage() {
           }
           return true;
         });
+        setConversionRate(currencyConversion[getCurrencyCode(college.country)]);
+        setCollegeData(college);
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -51,7 +53,6 @@ export default function CollegePage() {
       fetchData();
     }
   }, [collegeId]);
-
   return (
     <>
       {loading ? (
@@ -72,6 +73,7 @@ export default function CollegePage() {
             }}
           />
           <BottomSection
+            converionRate={converionRate}
             data={{
               eligibility: collegeData.landing.eligibility.html,
               finance: collegeData.landing.finance.html,
