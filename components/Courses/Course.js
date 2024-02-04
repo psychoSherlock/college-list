@@ -4,6 +4,18 @@ import { useRouter } from "next/navigation";
 
 const Course = ({ courseData, converionRate }) => {
   const router = useRouter();
+  function getFirstNumber(perYearFeeAud) {
+    if (typeof perYearFeeAud !== "string") {
+      return perYearFeeAud;
+    }
+
+    const match = perYearFeeAud.match(/[\d,]+/);
+    if (match) {
+      const numberString = match[0].replace(/,/g, "");
+      return Number(numberString);
+    }
+    return null;
+  }
   return (
     <div
       className="bg-[#003366] text-[whitesmoke] w-[400px] min-h-[400px] p-5 rounded-lg hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
@@ -26,17 +38,14 @@ const Course = ({ courseData, converionRate }) => {
 
         <h2 className="text-xl font-bold ">
           Fees:{" "}
-          {typeof courseData.perYearFeeAUD === "number"
-            ? `${
-                currencies[courseData.country]
-              } ${courseData.perYearFeeAUD.toLocaleString()} per year (Approx. INR ${
-                typeof courseData.perYearFeeAUD === "number"
-                  ? Math.floor(
-                      courseData.perYearFeeAUD / Number(converionRate)
-                    ).toLocaleString()
-                  : "Unavailable"
-              })`
-            : "Unavaiable"}
+          {courseData.perYearFeeAud ||
+          getFirstNumber(courseData.perYearFeeAUD) > 1
+            ? `${currencies[courseData.country]} ${`${getFirstNumber(
+                courseData.perYearFeeAUD
+              ).toLocaleString()} per year`} (Approx INR ${Math.floor(
+                getFirstNumber(courseData.perYearFeeAUD) / Number(converionRate)
+              ).toLocaleString()})`
+            : "Unavailable"}
         </h2>
       </div>
     </div>
