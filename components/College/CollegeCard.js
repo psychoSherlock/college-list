@@ -16,9 +16,9 @@ const CollegeCard = ({ data }) => {
           <h1 className="text-black text-xl font-bold">
             {data.courseName ? data.courseName.trim() : ""}
           </h1>
-          {/* <h2 className="text-sm text-black mt-2 ">
-            {data.address ? data.address.trim() : ""}
-          </h2> */}
+          <h2 className="text-sm text-black mt-2 ">
+            {data.name ? data.name.trim() : ""}
+          </h2>
         </div>
       </div>
     </div>
