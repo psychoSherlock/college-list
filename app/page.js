@@ -48,16 +48,22 @@ export default function Home() {
       },
       body: JSON.stringify(current),
     }).then(async (res) => {
-      const { data, noOfColleges } = await res.json();
+      const { data, totalCount } = await res.json();
       if (
         current.program === "" &&
         current.type === "" &&
         current.courseName === "" &&
         current.collegeName === ""
       ) {
-        setNoOfPages(Math.ceil(noOfColleges / 20));
+        setNoOfPages(Math.ceil(totalCount / 20));
       } else {
-        setNoOfPages(Math.ceil(noOfColleges / 50));
+        if (totalCount == 0) {
+          setNoOfPages(null);
+          setCollegesOverview([]);
+          setLoading(false);
+          return;
+        }
+        setNoOfPages(Math.ceil(totalCount / 50));
       }
       setCollegesOverview(data);
       setLoading(false);
@@ -119,11 +125,12 @@ export default function Home() {
                 setFilterNow(!filterNow);
               }}
             >
-              {[...Array(noOfPages)].map((_, index) => (
-                <option key={index} value={index + 1}>
-                  {index + 1}
-                </option>
-              ))}
+              {noOfPages != 0 &&
+                [...Array(noOfPages)].map((_, index) => (
+                  <option key={index} value={index + 1}>
+                    {index + 1}
+                  </option>
+                ))}
             </select>
           </div>
           <button
