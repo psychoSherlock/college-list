@@ -4,7 +4,7 @@
 // https://collegelist1-u6u2ednp.b4a.run
 const nextConfig = {
   env: {
-    api: "http://localhost:4000",
+    api: "https://list.glitchy.systems",
   },
 };
 
