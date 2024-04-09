@@ -66,18 +66,18 @@ export default function CollegePage() {
               name: collegeData.name,
               collegeUrl: collegeData.collegeUrl,
               address: collegeData.address,
-              campus: collegeData.campus.coordinate[0],
-              about: collegeData.landing.overview.about,
-              overviewHtml: collegeData.landing.overview.html,
+              // campus: collegeData.campus.coordinate[0],
+              // about: collegeData.landing.overview.about,
+              // overviewHtml: collegeData.landing.overview.html,
               // overviewRanking: collegeData.landing.overview.ranking,
             }}
           />
           <BottomSection
             converionRate={converionRate}
             data={{
-              eligibility: collegeData.landing.eligibility.html,
-              finance: collegeData.landing.finance.html,
-              department: collegeData.landing.department.html,
+              // eligibility: collegeData.landing.eligibility.html,
+              // finance: collegeData.landing.finance.html,
+              // department: collegeData.landing.department.html,
               courses: collegeData.courseDetails,
               scholarships: collegeData.scholarshipDetails,
             }}
