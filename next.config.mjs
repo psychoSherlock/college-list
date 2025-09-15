@@ -4,7 +4,7 @@
 // https://collegelist1-u6u2ednp.b4a.run
 const nextConfig = {
   env: {
-    api: "https://scraper.psychosherlock.systems/",
+    api: "https://scraper.psychosherlock.systems",
   },
 };
 
