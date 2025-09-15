@@ -4,7 +4,7 @@
 // https://collegelist1-u6u2ednp.b4a.run
 const nextConfig = {
   env: {
-    api: "http://127.0.0.1:8000",
+    api: "https://scraper.psychosherlock.systems/",
   },
 };
 
