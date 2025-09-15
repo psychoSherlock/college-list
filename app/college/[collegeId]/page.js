@@ -66,6 +66,7 @@ export default function CollegePage() {
               name: collegeData.name,
               collegeUrl: collegeData.collegeUrl,
               address: collegeData.address,
+              logo: collegeData.logo,
               // campus: collegeData.campus.coordinate[0],
               // about: collegeData.landing.overview.about,
               // overviewHtml: collegeData.landing.overview.html,

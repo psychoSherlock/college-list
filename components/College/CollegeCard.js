@@ -18,6 +18,7 @@ const CollegeCard = ({ data }) => {
           </h1>
           <h2 className="text-sm text-black mt-2 ">
             {data.name ? data.name.trim() : ""}
+            {data.logo && data.logo}
           </h2>
         </div>
       </div>

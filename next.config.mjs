@@ -4,7 +4,7 @@
 // https://collegelist1-u6u2ednp.b4a.run
 const nextConfig = {
   env: {
-    api: "http://144.24.136.246:8000",
+    api: "http://127.0.0.1:8000",
   },
 };
 

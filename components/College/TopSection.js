@@ -26,7 +26,11 @@ const TopSection = ({ data }) => {
               </h6>
             </div>
             <img
-              src="https://www.shutterstock.com/image-vector/college-logo-design-template-vector-600nw-2312781315.jpg"
+              src={
+                data?.logo
+                  ? data.logo
+                  : "https://www.shutterstock.com/image-vector/college-logo-design-template-vector-600nw-2312781315.jpg"
+              }
               className="w-96 h-96 rounded-full hidden lg:block"
             />
           </div>
